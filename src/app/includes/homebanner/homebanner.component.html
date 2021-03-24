@@ -1,0 +1,31 @@
+<section class="sliderpart">
+<div class="home-slider-block">
+<div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#carouselFade" data-slide-to="{{i}}" *ngFor="let banner of banners; let i=index" [ngClass]="(i === 0) ? 'active' : ''"></li>
+</ol>
+
+<div class="carousel-inner" role="listbox">
+<div *ngFor="let banner of banners; let i=index" [ngClass]="(i === 0) ? 'item active' : 'item'"> 
+<div class="col-md-4 slider-style">
+<div class="slider-content">
+<h2>{{banner['id']}}-LIVE LOCAL. WORK LOCAL</h2>
+<p>JOBS IN BUCKS, MONTGOMERY AND PHILADELPHIA</p>
+</div>	
+<div class="slider-design">
+<img src="assets/images/banner-bg2.png" alt="" >		
+</div>		
+</div>	
+<div class="col-md-8 pad0">	
+<div class="slider-height">
+<img src="{{banner['banner_image']}}" alt="{{banner['title']}}" class="slider-size" >
+</div>
+</div>	
+</div>
+
+</div>
+</div>
+
+<div class="clr"></div>
+</div>
+</section>

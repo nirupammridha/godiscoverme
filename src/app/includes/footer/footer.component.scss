@@ -1,0 +1,104 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixin";
+
+footer {
+	width: 100%;
+	display: block;
+	& .footerbg {
+	width: 100%;
+	display: inline-block;
+	background-color: $footer-color;
+	padding-bottom: 20px;
+	& .con-gap {
+	padding-right: 10px;
+	}
+	& ul.footer-menu {
+	list-style: none;
+	margin: 20px 0 0 0;
+	padding: 0;
+	width: 100%;
+	display: inline-block;
+	& li {
+	position: relative;
+	width: 50%;
+	float: left;
+	margin: 0;
+	padding: 0 0 5px 0;
+	&:before {
+	content: '_';
+	color: #EAEAEA;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	}
+	& a {
+	display: inline-block;
+	padding: 3px 3px 3px 12px;
+	color: #EAEAEA;
+	font-size: 15px;
+	text-decoration: none;
+	&:hover {
+	color: $theme-color;
+	}
+	}
+	}
+	&.full {
+	& li {
+	width: 100%;
+	}
+	}
+	}
+	& .textfildstyle {
+	width: 90%;
+    @media (max-width:768px) {
+	width: 98%;
+	}
+	& .form-control {
+	background: none;
+	border: 1px solid $theme-color !important;
+	border-radius: 50px !important;
+	height: 45px !important;
+	display: inline-block;
+	margin-top: 10px;
+	padding-left: 15px;
+	color: #fff;	
+	&::placeholder {
+	color: #fff;
+	opacity: 1;
+	}
+	& :-ms-input-placeholder {
+	color: #fff;
+	}
+	&::-ms-input-placeholder {
+	color: #fff;
+	}
+	}
+	& .btnsubmit {
+	height: 45px !important;
+	border-radius: 50px !important;
+	background-color: $theme-color;
+	border: 1px solid $theme-color;
+	color: #fff;
+	padding-left: 20px;
+	padding-right: 20px;
+	position: relative;
+	top: 5px;
+	left: 10px;
+	&:hover {
+	background-color: transparent;
+	}	
+	}
+	}
+	& .footer-social-block {
+	width: 90%;
+	display: inline-block;
+	padding: 8px 0;
+	}	
+	}
+	& .copyright {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	padding:20px 10px;
+	}
+}

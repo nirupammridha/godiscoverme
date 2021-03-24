@@ -1,0 +1,32 @@
+<div class="mobile-menu" (click)="myfunction()"><i class="icon-menu"></i></div>	
+
+<div class="menu-bar">
+<div class="container">	
+<div class="menu-overlay" [class.open-menu]="check" (click)="myfunction()"></div>
+<nav class="navmenu navmenu-left" [class.open-menu]="check">
+	<ul class="custom-menu">
+	<li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+	<li><a routerLink="/about" routerLinkActive="active">About</a></li>	
+	<li><a routerLink="/post-job" routerLinkActive="active">Post a Job</a></li>	
+	<li><a routerLink="/career-advice" routerLinkActive="active">Career Advice </a></li>
+
+	<li><a href="javascript:void(0);">Services <span class="arrow"></span></a>
+	<ul class="menudropdown">
+	<li><a routerLink="/service-page" >Information Technology</a></li>
+	<li><a routerLink="/service-page" >Printing Technology</a></li>
+	<li><a routerLink="/service-page" >Business</a></li>
+	<li><a routerLink="/service-page" >Cottage industry</a></li>
+	<li><a routerLink="/service-page" >Heavy industry</a></li>
+	<li><a routerLink="/service-page" >Manufacturing</a></li>
+	<li><a routerLink="/service-page" >Fruit production</a></li>
+	<li><a routerLink="/service-page" >Film industry</a></li>
+	</ul>
+	</li>
+
+	<li><a routerLink="/contact" routerLinkActive="active">Contact Us</a></li>
+	<li class="post-new-job"><a routerLink="/jobpost"><i class="icon-add-plus hidden-xs"></i> Post New Job</a></li>	
+	</ul>
+</nav>
+</div>
+<div class="clr"></div>
+</div>

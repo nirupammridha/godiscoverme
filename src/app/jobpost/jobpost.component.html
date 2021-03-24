@@ -1,0 +1,267 @@
+<section class="other-banner">
+<div class="banner-content">
+	<h2>Post a Job</h2>
+</div>
+<img src="assets/images/slider/other-banner.jpg" alt="">
+</section>
+
+<section class="bg-off">
+<div class="container">
+<div class="height20 clr"></div>
+
+<div class="wrapper">
+<div class="left-sidebar">
+<div class="featured-view">
+<div class="contentblock">	
+<h3>Post a Job</h3>
+<div class="clr height20"></div>	
+<form class="row pad10" [formGroup]="jobpostForm" (ngSubmit)="onSubmit()">
+<div *ngIf="success?.message" class="alert alert-success mt-3">
+	{{ success?.message }}
+</div>
+<div *ngIf="errors?.title" class="alert alert-danger mt-3">
+	{{ errors?.title }}
+</div>
+<div *ngIf="errors?.location" class="alert alert-danger mt-3">
+	{{ errors?.location }}
+</div>
+<div *ngIf="errors?.job_type" class="alert alert-danger mt-3">
+	{{ errors?.job_type }}
+</div>
+<div *ngIf="errors?.category" class="alert alert-danger mt-3">
+	{{ errors?.category }}
+</div>
+<div *ngIf="errors?.description" class="alert alert-danger mt-3">
+	{{ errors?.description }}
+</div>
+<div *ngIf="errors?.compensation_from" class="alert alert-danger mt-3">
+	{{ errors?.compensation_from }}
+</div>
+<div *ngIf="errors?.compensation_to" class="alert alert-danger mt-3">
+	{{ errors?.compensation_to }}
+</div>
+<div *ngIf="errors?.currency" class="alert alert-danger mt-3">
+	{{ errors?.currency }}
+</div>
+<div *ngIf="errors?.frequency" class="alert alert-danger mt-3">
+	{{ errors?.frequency }}
+</div>
+<div *ngIf="errors?.compensation_show" class="alert alert-danger mt-3">
+	{{ errors?.compensation_show }}
+</div>
+<div *ngIf="errors?.additional_info" class="alert alert-danger mt-3">
+	{{ errors?.additional_info }}
+</div>
+<div class="col-sm-12 pad5 form-group">
+<input type="text" class="form-control" placeholder="Job Title" formControlName="title">
+</div>
+<div class="col-sm-6 pad5 form-group">	
+	<div class="select-wrapper">
+	<select class="form-control select" formControlName="location">
+	<option value="">Job Location</option>
+	<option value="on-site">On Site</option>
+	<option value="remote">Remote</option>
+	<option value="temporarily-remote">Temporarily Remote</option>
+	</select>
+	</div>
+</div>
+<div class="col-sm-6 pad5 form-group">	
+<input type="text" formControlName="location_name" class="form-control" placeholder="Location Name">
+</div>	
+	
+<div class="col-sm-12 pad5 form-group">
+<label class="gapright">Job Type</label>
+<label class="radio-inline">
+<input type="radio" id="job_custom_job_type_id_12941" value="12941" checked="checked" formControlName="job_type">
+Full Time
+</label>
+<label class="radio-inline">
+<input type="radio" id="job_custom_job_type_id_12942" value="12942" formControlName="job_type">
+Part Time
+</label>
+<label class="radio-inline">
+<input type="radio" id="job_custom_job_type_id_12943" value="12943" formControlName="job_type">
+Freelance
+</label>
+<label class="radio-inline">
+<input type="radio" id="job_custom_job_type_id_12944" value="12944" formControlName="job_type">
+Temporary
+</label>
+</div>	
+	
+<div class="col-sm-12 pad5 form-group">	
+	<div class="select-wrapper">
+	<select class="form-control select" formControlName="category">
+		<option value="">Select your Category</option>
+		<option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+	</select>
+	</div>
+</div>	
+	
+<div class="col-sm-12 pad5 form-group">		
+<textarea rows="5" class="form-control" placeholder="Description" formControlName="description"></textarea>	
+</div>
+	
+<div class="col-sm-12 pad5">
+	<label>Compensation</label>
+</div>
+<div class="col-sm-3 pad5 form-group">	
+<input type="number" class="form-control" placeholder="Enter amount" formControlName="compensation_from">	
+</div>
+<div class="col-sm-3 pad5 form-group">
+	<div class="addrange" [class.hide]="check" (click)="myfunction()" ><i class="icon-add-plus"></i> Add Range</div>
+	<div class="blocknumber" [class.open]="check">
+		<span>TO</span>
+	<input type="number" class="form-control" placeholder="Max amount" formControlName="compensation_to">
+		<div class="closeblock" (click)="myfunction()">X</div>
+	</div>
+	<div class="clr"></div>
+</div>
+<div class="col-sm-3 pad5 form-group">	
+	<div class="select-wrapper">
+	<select class="form-control select" formControlName="currency">
+		<option value="USD">USD</option>
+		<option value="CAD">CAD</option>
+		<option value="GBP">GBP</option>
+		<option value="EUR">EUR</option>
+		<option value="AUD">AUD</option>
+		<option value="NZD">NZD</option>
+		<option value="JPY">JPY</option>
+		<option value="DKK">DKK</option>
+		<option value="SEK">SEK</option>
+		<option value="SGD">SGD</option>
+		<option value="ZAR">ZAR</option>
+		<option value="HKD">HKD</option>
+		<option value="PHP">PHP</option>
+		<option value="TWD">TWD</option>
+		<option value="CNY-RMB">CNY-RMB</option>
+		<option value="SAR">SAR</option>
+	</select>
+	</div>
+</div>
+<div class="col-sm-3 pad5 form-group">
+<div class="select-wrapper">
+<select class="form-control select" formControlName="frequency">
+	<option value="annually">Annually</option>
+	<option value="monthly">Monthly</option>
+	<option value="daily">Daily</option>
+	<option value="weekly">Weekly</option>
+	<option value="hourly">Hourly</option>
+	<option value="fixed_price">Fixed Price</option>
+	<option value="pro_rate">Pro Rata</option>
+</select>	
+</div>
+</div>	
+	
+<div class="col-sm-12 pad5 form-group">
+<input type="text" class="form-control" placeholder="Additional compensation information (benefits, etc.)" formControlName="additional_info">
+</div>
+	
+<div class="col-sm-12 pad5 form-group">
+<label>
+<input formControlName="compensation_show" type="hidden" value="0" />
+<input type="checkbox" value="1" checked="checked" formControlName="compensation_show" id="job_salary_display" > Show compensation to job seekers <i class="text-success">Recommended!</i>
+</label>
+</div>
+	
+<div class="col-sm-6 pad5 form-group">
+<input type="text" class="form-control" placeholder="Company Name" formControlName="company_name">
+</div>
+	
+<div class="col-sm-6 pad5 form-group">
+<input type="url" class="form-control" placeholder="Company URL" formControlName="company_url">
+</div>
+	
+<div class="col-sm-12 pad5 form-group">
+<div class="upload-main-wrapper">
+<div class="upload-wrapper">
+<input type="file" id="upload-file" formControlName="upload_file" (change)="onSelectedFile($event)">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="224.3881704980842 176.8527621722847 221.13266283524905 178.8472378277154" width="221.13" height="178.85"><defs><path d="M357.38 176.85C386.18 176.85 409.53 204.24 409.53 238.02C409.53 239.29 409.5 240.56 409.42 241.81C430.23 246.95 445.52 264.16 445.52 284.59C445.52 284.59 445.52 284.59 445.52 284.59C445.52 309.08 423.56 328.94 396.47 328.94C384.17 328.94 285.74 328.94 273.44 328.94C246.35 328.94 224.39 309.08 224.39 284.59C224.39 284.59 224.39 284.59 224.39 284.59C224.39 263.24 241.08 245.41 263.31 241.2C265.3 218.05 281.96 199.98 302.22 199.98C306.67 199.98 310.94 200.85 314.93 202.46C324.4 186.96 339.88 176.85 357.38 176.85Z" id="b1aO7LLtdW"></path><path d="M306.46 297.6L339.79 297.6L373.13 297.6L339.79 255.94L306.46 297.6Z" id="c4SXvvMdYD"></path><path d="M350.79 293.05L328.79 293.05L328.79 355.7L350.79 355.7L350.79 293.05Z" id="b11si2zUk"></path></defs><g><g><g><use xlink:href="#b1aO7LLtdW" opacity="1" fill="#ffffff" fill-opacity="1"></use></g><g><g><use xlink:href="#c4SXvvMdYD" opacity="1" fill="#363535" fill-opacity="1"></use></g><g><use xlink:href="#b11si2zUk" opacity="1" fill="#363535" fill-opacity="1"></use></g></g></g></g></svg>
+<span class="file-upload-text">Upload File</span>
+<div class="file-success-text">
+<svg version="1.1" id="check" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 100 100"  xml:space="preserve">
+<circle style="fill:rgba(0,0,0,0);stroke:#ffffff;stroke-width:10;stroke-miterlimit:10;" cx="49.799" cy="49.746" r="44.757"/>
+<polyline style="fill:rgba(0,0,0,0);stroke:#ffffff;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
+27.114,51 41.402,65.288 72.485,34.205 "/>
+</svg> <span>Successfully</span></div>
+</div>
+<p id="file-upload-name"></p>
+</div>
+</div>
+	
+<div class="col-sm-12 pad5 form-group">
+<label class="gapright">How to apply</label>
+<label class="radio-inline">
+<input type="radio" id="" value="" checked="checked">
+Apply by Email
+</label>
+<label class="radio-inline">
+<input type="radio" id="" value="">
+Apply by URL
+</label>
+</div>		
+
+<div class="col-sm-12 pad5 form-group">
+<input type="text" class="form-control" placeholder="i.e. you@example.com" >
+<div class="clr"></div>	
+	<small>Applications for this job will be sent to the email address you specify.</small>
+</div>
+	
+<div class="col-sm-12 pad5 form-group">
+<textarea rows="5" class="form-control" id="" placeholder="Additional Application Instructions"></textarea>
+</div>
+	
+<div class="col-sm-12 pad5 form-group">
+<input type="email" class="form-control" placeholder="Contact Email" formControlName="contact_email">	
+</div>
+	
+<div class="col-sm-12 pad5 form-group">
+<button class="btn btn-search btn-style text-uppercase text-bold" type="submit">Preview Job <i class="icon-arrow-right"></i></button>
+</div>	
+	
+	
+</form>
+</div>	
+</div>
+</div>
+	
+<div class="right-sidebar">
+<div class="company-view">
+
+<h3>Hire Local! - $179 for 30 days</h3>
+<p>We talk to job seekers every day who want to work in their own backyard. RecruitmentQueen is the only job board dedicated to Bucks County and the surrounding area.</p>
+	
+<p>Create more buzz around your job by highlighting it as a Featured Job on our homepage. If you have questions or need help with your job posting, call us at 267-981-5976.</p>
+<p><strong>Your job posting will be seen on both regional and national job boards, job search aggregators, and Facebook, Twitter, Google+ & LinkedIn.
+</strong></p>
+<p><strong>Local sites your job will be seen on: BucksCountyHerald.com, LevittownNow.com, NewtownPANow.com and Salute2Service.com.</strong></p>	
+<h3>Posting Tips</h3>	
+	
+<p>Increase applies to your job by including details that job seekers look for: </p>	
+	
+<ul class="list">
+<li> Years of Experience</li>
+<li> Salary or Hourly Pay</li>
+<li> Benefits Offered</li>
+<li> Travel Requirements</li>
+<li> License or Certification </li>
+<li> Culture &amp; Work Environment </li>
+<li> Career Development &amp; Growth </li>
+<li> Company Values &amp; Mission</li>
+<li> Why They Should Work For You</li>
+</ul>	
+	
+<div class="clr height5"></div>	
+</div>
+	
+</div>
+	
+</div>
+</div>
+<div class="clr height5"></div>
+</section>
+
+
+
+

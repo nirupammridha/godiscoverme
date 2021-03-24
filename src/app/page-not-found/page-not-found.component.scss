@@ -1,0 +1,17 @@
+@import "../../assets/scss/variables";
+.pagenotfound {
+	display: block;
+	padding: 50px 10px;
+	text-align: center;
+	& h1 {
+		font-size: 100px;
+		color: $theme-color;
+		font-weight: bold;
+	}
+	& h2 {
+		font-size: 40px;
+	}
+	& p {
+		margin-top: 20px;
+	}
+}

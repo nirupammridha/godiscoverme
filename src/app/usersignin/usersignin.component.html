@@ -1,0 +1,52 @@
+<section class="other-banner">
+    <div class="banner-content">
+        <h2>Employer Log In</h2>
+    </div>
+    <img src="assets/images/slider/other-banner.jpg" alt="">
+    </section>
+    
+    <section class="bg-off">
+    <div class="container">
+    <div class="signupblock display-flex">
+    <div class="col-sm-6 pad0">
+    <div class="imgbox">
+    <div class="l-logo"><img src="assets/images/logo.png" alt="" class="img-responsive"></div>
+    <img src="assets/images/about.jpg" alt="" class="imgsize">
+    </div>
+    </div>
+    <div class="col-sm-6 pad0">
+    <div class="loginbox">
+        <h2 class="text-center">Jobseeker Log In</h2>
+        <div class="clr height10"></div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Errors -->
+        <div *ngIf="errors?.email" class="alert alert-danger mt-3">
+            {{ errors?.email }}
+        </div>
+        <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+            {{ errors?.password }}
+        </div>
+        <div *ngIf="errors?.error" class="alert alert-danger mt-3">
+            {{ errors?.error }}
+        </div>
+        <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email Address" formControlName="email">
+        </div>
+        <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-search btn-style">LOGIN</button>
+        </div>	
+        <div class="form-group">
+            <div class="col-sm-6 col-xs-4 pad0"><h4><a routerLink="/jobseeker-register">Sign Up</a></h4></div>
+            <div class="col-sm-6 col-xs-8 pad0"><h4 class="text-right"><a routerLink="/forgot">Forgot your password?</a></h4></div>
+        </div>
+        </form>
+        </div>	
+        
+    </div>
+    </div>
+    </div>
+    </section>
+    

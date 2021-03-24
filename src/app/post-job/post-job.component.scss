@@ -1,0 +1,112 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixin";
+
+
+ul.post-a-job {
+	list-style: none;
+	width: 100%;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	& li {
+	width: 100%;
+	display: inline-block;
+	margin: 0 0 15px 0;
+	padding: 0;
+	border-left: 5px solid #BCC9FF;
+	border-radius: 4px;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+	display: block;
+	& .jobcontentblock {
+	padding: 25px;	
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	& .dateblock {
+	position: absolute;
+	top: 20px;
+	right: 25px;
+	z-index: 1;
+	font-size: 13px;
+	color: #757575;
+	font-family: 'Oswald', sans-serif;
+	display: block;
+	width: auto;
+	& i {
+	margin-right:5px;
+	}	
+	}	
+	& h4 {
+	margin: 0;
+	padding-bottom: 6px;
+	width: 80%;
+	color: #000;
+	@media (max-width:768px) {	
+	padding-top: 25px;
+	width: 100%;
+	}
+	}
+	& p {
+	margin-bottom: 3px;
+	color: #363636;	
+	}
+	& .in-cludetxt {
+	display: block;
+	& span {
+	display: block;
+	padding-bottom: 3px;
+	font-size: 13px;	
+	&:before {
+	content: '_';
+	margin-right: 5px;
+	position: relative;
+	top: -5px;
+	}
+	}
+	}
+	& .price-post {
+	width: auto;
+	position: absolute;
+	right: 25px;
+	bottom:25px;
+	z-index: 2;
+	display: inline-block;
+	@media (max-width:768px) {	
+	position: relative;
+	float: right;
+	bottom: inherit;
+	right: inherit;
+	}
+	}
+	& .price {
+	font-size: 18px;
+	font-family: 'Oswald', sans-serif;
+	margin-right: 15px;
+	top: 4px;
+	position: relative;
+	display: inline-block;
+	}	
+	& .lineblock {
+	margin-right: 10px;
+	& i {
+	margin-right:5px;
+	}	
+	}	
+	@media (max-width:768px) {	
+	& .lineblock {
+	display: block;
+	}
+	}
+	}		
+	&:hover {
+	border-color: $theme-color;
+	@include box-shadow;
+	}
+	&:nth-child(even){
+	background-color: #fff;
+	}
+	&:nth-child(odd) {
+	background-color: #F3F6FF;
+	}
+	}
+}

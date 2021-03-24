@@ -1,0 +1,67 @@
+<section class="other-banner">
+<div class="banner-content">
+	<h2>Employer Profile</h2>
+</div>
+<img src="assets/images/slider/other-banner.jpg" alt="">
+</section>
+
+<section class="bg-off">
+<div class="container">
+<div class="signupblock display-flex">
+<div class="col-sm-6 pad0">
+<div class="imgbox">
+<div class="l-logo"><img src="assets/images/logo.png" alt="" class="img-responsive"></div>
+<img src="assets/images/about.jpg" alt="" class="imgsize">
+</div>
+</div>
+<div class="col-sm-6 pad0">
+<div class="loginbox">
+	<h2>Create Your Employer Profile</h2>
+	<p>Help job seekers in Bucks County learn more about your company by creating your free employer profile. When you post jobs, your jobs will be featured on your employer profile page.</p>
+	<div class="clr height10"></div>
+	<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+		 <!-- Errors -->
+	<div *ngIf="errors?.name" class="alert alert-danger mt-3">
+	{{ errors?.name }}
+	</div>
+	<div *ngIf="errors?.email" class="alert alert-danger mt-3">
+	{{ errors?.email }}
+	</div>
+	<div *ngIf="errors?.password" class="alert alert-danger mt-3">
+		{{ errors?.password }}
+	</div>
+	<div *ngIf="errors?.password_confirmation" class="alert alert-danger mt-3">
+		{{ errors?.password_confirmation }}
+	</div>
+	<div class="form-group">
+	<input type="email" class="form-control" placeholder="Email Address" formControlName="email">
+	</div>
+		
+	<div class="form-group">
+	<input type="text" class="form-control" placeholder="Company Name" formControlName="name">
+	</div>	
+		
+	<div class="form-group">
+	<input type="password" class="form-control" placeholder="Password" formControlName="password">
+	</div>
+		
+	<div class="form-group">
+	<input type="password" class="form-control" placeholder="Password Confirmation" formControlName="password_confirmation">
+	</div>
+	<p>By creating an Employer account, you acknowledge that you have read and understand the <a href="">Privacy Policy"</a>. </p>	
+		
+	<div class="form-group">
+	<button class="btn btn-search btn-style" type="submit">REGISTER</button>
+	</div>	
+	<div class="form-group">
+		<div class="col-sm-8 col-xs-8 pad0"><h4>Already have an Account?</h4></div>
+		<div class="col-sm-4 col-xs-4 pad0"><h4 class="text-right"><a routerLink="/login">Log In</a></h4></div>
+	</div>
+	</form>
+	</div>	
+	
+</div>
+</div>
+</div>
+</section>
+

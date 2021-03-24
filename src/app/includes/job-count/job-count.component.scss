@@ -1,0 +1,93 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixin";
+
+.bg-jobpost {
+	position: relative;
+	&:before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background-color: #0b2a40;
+	content: '';
+	}
+}
+.daily-job-post {
+	width: 100%;
+	background-color: $theme-color;
+	border-radius: 6px;
+	display: inline-block;
+	height: 190px;
+	@media (max-width:768px) {
+	height: auto;
+	}
+	@include box-shadow;
+	& .leftimg {
+	width: 30%;
+	height: 190px;	
+	display: block;
+	float: left;
+	position: relative;
+	@media (max-width:768px) {	
+	display: none;	
+	}
+	&:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 50px 180px 0;
+	border-color: transparent $theme-color transparent transparent;
+	}	
+	& .imgsize {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 6px 0 0 6px;
+	}
+	}
+	& .rightcontent {
+	width: 70%;
+	float: left;
+	padding:25px;
+	color: #fff;
+	@media (max-width:768px) {	
+	width: 100%;
+	padding: 20px 10px;
+	}	
+	& h2 {
+	margin: 0;
+	font-size: 27px;
+	}
+	& ul.post-listing {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0 0;
+	width: 100%;
+	& li {
+	width: 32%;
+	display: inline-block;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	& .counter-value {
+	font-size: 25px;
+	@media (max-width:768px) {
+	font-size: 20px;
+	}
+	padding-bottom: 10px;
+	}
+	& .namepost {
+	font-size: 16px;
+	@media (max-width:768px) {
+	font-size: 14px;
+	}
+	}
+	}
+	}	
+	}
+}

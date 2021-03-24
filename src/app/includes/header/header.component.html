@@ -1,0 +1,23 @@
+
+<header>
+<div class="container">
+<div class="col-sm-6 col-xs-6 pad5">
+<div class="logo"><a routerLink="/home"><img src="assets/images/logo.png" alt="" class="img-responsive"></a></div>
+</div>
+<div class="col-sm-6 col-xs-6 pad5">
+	<div class="social-block">
+	<app-social></app-social>
+	</div>
+	<div class="clr"></div>
+	<ul class="loginlist">
+	<li><a routerLink="/login" routerLinkActive="active" *ngIf="!isSignedIn"><i class="icon-employer-login"></i> <span>Employer Login</span></a></li>
+	<li><a routerLink="/jobseeker-login"><i class="icon-job-seeker-login"></i> <span>Job Seeker Login</span></a></li>
+	<button class="btn btn-outline-primary" (click)="signOut()" *ngIf="isSignedIn">Log out</button>
+	</ul>
+	
+</div>
+<div class="clr height5"></div>
+</div>
+<app-menu></app-menu>
+<div class="clr"></div>
+</header>
